@@ -14,7 +14,7 @@ async function getUserData(req,res) {
             isAccountVerified:user.isAccountVerified,
         }});
     } catch (error) {
-        res,json({success:false , message:error.message})
+        res.json({success:false , message:error.message})
     }
 }
 
