@@ -22,11 +22,12 @@ mongoDbConnection()
     .then(() => console.log("MongoDB connected"))
     .catch((err) => console.log("MongoDB connection error:", err));
 
+    const allowedOrigins = ['http://localhost:5173']
 
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ credentials: true }));
+app.use(cors({origin:allowedOrigins , credentials: true }));
 
 // API Endpoints
 app.get("/", (req, res) => {
