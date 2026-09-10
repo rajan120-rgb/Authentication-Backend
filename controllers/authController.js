@@ -44,7 +44,7 @@ async function register(req, res) {
 
         await transporter.sendMail(mailOptions)
 
-        return res.json({ success: true })
+        return res.json({ success: true, message:"Register Successfully"})
     } catch (error) {
         res.json({ success: false, message: error.message });
     }
@@ -75,7 +75,7 @@ async function login(req, res) {
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
 
-        return res.json({ success: true })
+        return res.json({ success: true , message:"Login Successfully" })
 
     } catch (error) {
         res.json({ success: false, message: error.message });
